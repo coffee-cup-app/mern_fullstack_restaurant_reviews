@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "node backend/index.js",
+    "start": "node backend/index.js",
     "client": "npm start --prefix frontend",
-    "clientServer": "concurrently \"npm run client\" \"npm run server\" ",
+    "clientServer": "concurrently \"npm run client\" \"npm run start\" ",
     "dev": "nodemon backend/index.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
