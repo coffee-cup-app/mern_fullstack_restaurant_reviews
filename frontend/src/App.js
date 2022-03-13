@@ -1,7 +1,8 @@
 import React from "react"
 import {useState} from "react"
-import {Routes, Route, Link, useRoutes} from "react-router-dom"
+import {Link, useRoutes} from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './App.css'
 
 //Import components
 import Login from "./components/login.js"
@@ -32,12 +33,9 @@ function App() {
   ])
 
   return (
-    //Navbar
     <div className="App">
       <nav className="navbar navbar-expand navbar-dark bg-dark">
-        <a href="/restaurants" className="navbar-brand">
-          Restaurant Reviews
-        </a>
+        <h2 className="nav-title">Restaurant Reviews</h2>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link to="/restaurants" className="nav-link">
@@ -60,30 +58,6 @@ function App() {
       
       <div className="container mt-3">
         {routes}
-
-        {/* <Routes>
-          <Route 
-            index path="/"
-            element={<RestaurantsList />}
-          />
-          <Route 
-            path="/restaurants"
-            element={<RestaurantsList />}
-          />
-          <Route 
-            path="/restaurants/:id/review"
-            element={<AddRestaurantReview user={user} />}
-          />
-          <Route 
-            path="/restaurants/:id"
-            element={<RestaurantCard user={user} />}
-          />
-          <Route 
-            path="/login"
-            element={<Login login={login} />}
-          />
-        </Routes> */}
-
       </div>
     </div>
   );

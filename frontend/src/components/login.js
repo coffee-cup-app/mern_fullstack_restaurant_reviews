@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import '../App.css'
 
 const Login = (props) => {
   //React router navigate hook used in login for redirect to "/"
@@ -30,37 +31,36 @@ const Login = (props) => {
 
   return (
     <div className="submit-form">
-      <div>
-        <div className="form-group">
-          <label htmlFor="user">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            id="name"
-            required
-            value={user.name}
-            onChange={handleInputChange}
-            name="name"
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="id">ID</label>
-          <input
-            type="text"
-            className="form-control"
-            id="id"
-            required
-            value={user.id}
-            onChange={handleInputChange}
-            name="id"
-          />
-        </div>
-
-        <button onClick={login} className="btn btn-success">
-          Login
-        </button>
+      <h2>Login</h2>
+      <div className="form-group">
+        <label htmlFor="user">Username</label>
+        <input
+          type="text"
+          className="form-control"
+          id="name"
+          required
+          value={user.name}
+          onChange={handleInputChange}
+          name="name"
+        />
       </div>
+
+      <div className="form-group">
+        <label htmlFor="id">ID</label>
+        <input
+          type="text"
+          className="form-control"
+          id="id"
+          required
+          value={user.id}
+          onChange={handleInputChange}
+          name="id"
+        />
+      </div>
+
+      <button onClick={login} className="btn btn-success">
+        Login
+      </button>
     </div>
   )
 }

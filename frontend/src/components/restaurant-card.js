@@ -56,38 +56,53 @@ const RestaurantCard = (props) => {
       })
   }
 
-  console.log("PARAMS:", id)
-  console.log("props", props)
-  console.log("restaurantCardState", restaurantCard)
-
   return (
     <div>
       {restaurantCard ? (
-        <div>
-          <h5>{restaurantCard.name}</h5>
-          <p>
-            <strong>Cuisine: </strong>{restaurantCard.cuisine}<br/>
-            <strong>Address: </strong>{restaurantCard.address.building} {restaurantCard.address.street}, {restaurantCard.address.zipcode}
-          </p>
+        <div className="restaurant-card-container">
+          <h2>Reviews</h2>
+          <div className='review-properties'>
+            <div>
+              <h6>Restaurant:</h6>
+              <p>{restaurantCard.name}</p>
+            </div>
+            <div>
+              <h6>Cuisine:</h6>
+              <p>{restaurantCard.cuisine}</p>
+            </div>
+            <div>
+              <h6>Address:</h6>
+              <p>{restaurantCard.address.building} {restaurantCard.address.street}, {restaurantCard.address.zipcode}</p>
+            </div>
+          </div>
+
           <Link to={"/restaurants/" + id + "/review"} className="btn btn-primary">
             Add Review
           </Link>
-          <h4> Reviews </h4>
+          
           <div className="row">
             {restaurantCard.reviews.length > 0 ? (
               restaurantCard.reviews.map((review, index) => {
                 return (
                   <div className="col-lg-4 pb-1" key={index}>
-                    <div className="card">
+                    <div className="card review-card">
                       <div className="card-body">
-                        <p className="card-text">
-                          {review.text}<br/>
-                          <strong>User: </strong>{review.name}<br/>
-                          <strong>Date: </strong>{review.date}
-                        </p>
+                        <div className="card-text review-card-text">
+                          <div>
+                            <h6>Review:</h6><p>{review.text}</p>
+                          </div>
+                          <div>
+                            <h6>User:</h6><p>{review.name}</p>
+                          </div>
+                          <div>
+                            <h6>Date:</h6><p>{review.date}</p>
+                          </div>
+                        </div>
                         {props.user && props.user.id === review.user_id &&
-                          <div className="row">
-                            <a onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">Delete</a>
+                          <div className="row review-buttons">
+                            <a onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">
+                              Delete
+                            </a>
                             <Link
                               href=""
                               to={"/restaurants/" + id + "/review"}
@@ -103,8 +118,8 @@ const RestaurantCard = (props) => {
                 )
               })
             ) : (
-            <div className="col-sm-4">
-              <p>No reviews yet.</p>
+            <div className="no-reviews col-sm-4">
+              <strong>No reviews yet</strong>
             </div>
             )}
 

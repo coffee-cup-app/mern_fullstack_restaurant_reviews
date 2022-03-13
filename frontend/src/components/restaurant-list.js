@@ -1,5 +1,6 @@
 //Imports
 import React, {useState, useEffect} from "react"
+import '../App.css'
 //React Router
 import {Link} from "react-router-dom"
 //Axios HTTP class object w/ request methods to get mongodb restaurant collection data
@@ -114,6 +115,7 @@ const RestaurantsList = () => {
   //Return restaurant list
   return (
     <div className="container">
+      <h2>Restaurants</h2>
       <div className="row pb-1">
         <div className="input-group col-lg-4">
           <input
@@ -133,6 +135,7 @@ const RestaurantsList = () => {
             </button>
           </div>
         </div>
+
         <div className="input-group col-lg-4">
           <input
             type="text"
@@ -151,6 +154,7 @@ const RestaurantsList = () => {
             </button>
           </div>
         </div>
+
         <div className="input-group col-lg-4">
           <select onChange={onChangeQueryCuisine}>
             { cuisines.map((cuisine, index) => {
@@ -170,19 +174,26 @@ const RestaurantsList = () => {
           </div>
         </div>
       </div>
+
       <div className="row">
         {restaurants.map((restaurant, index) => {
           const address = `${restaurant.address.building} ${restaurant.address.street}, ${restaurant.address.zipcode}`;
           return (
             <div className="col-lg-4 pb-1">
-              <div className="card">
-                <div className="card-body">
+              <div className="card restaurant-list-card">
+                <div className="card-body restaurant-card-body">
                   <h5 className="card-title">{restaurant.name}</h5>
-                  <p className="card-text">
-                    <strong>Cuisine: </strong>{restaurant.cuisine}<br/>
-                    <strong>Address: </strong>{address}
-                  </p>
-                  <div className="row">
+
+                  <div className="card-text review-card-text">
+                    <div>
+                      <h6>Cuisine: </h6><p>{restaurant.cuisine}</p>
+                    </div>
+                    <div>
+                      <h6>Address: </h6><p>{address}</p>
+                    </div>
+                  </div>
+
+                  <div className="row restaurant-list-btns">
                   <Link key={index} to={"/restaurants/"+restaurant._id} className="btn btn-primary col-lg-5 mx-1 mb-1">
                     View Reviews
                   </Link>

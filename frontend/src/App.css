@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 .App {
   text-align: center;
 }
@@ -35,4 +41,127 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-title {
+  color: white;
+  padding: 0 1rem;
+}
+
+.navbar-nav {
+  padding: 0 1rem;
+}
+
+.submit-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.submit-form * {
+  margin: 0.2rem 0;
+}
+
+.form-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-group {
+  margin: 0.5rem 0;
+}
+
+.input-group button {
+  margin-left: 0.5rem;
+}
+
+.restaurant-card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.restaurant-card-container > * {
+  margin: 0.5rem 0;
+}
+
+.review-properties {
+  align-items: center;
+}
+
+.review-properties div {
+  display: flex;
+  text-align: left;
+}
+
+.review-properties div h6 {
+  width: 7rem;
+  text-align: left;
+}
+
+.no-reviews {
+  width: 100%;
+}
+
+.review-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.review-card-text p {
+  padding: 0;
+  margin: 0;
+}
+
+.review-card-text h6 {
+  width: 5rem;
+  text-align: left;
+}
+
+.review-card-text div {
+  display: flex;
+}
+
+.add-review > * {
+  width: 50vw;
+}
+
+.add-review label {
+  text-align: center;
+}
+
+.restaurant-list-btns {
+  width: 100%;
+  justify-content: center;
+}
+
+.restaurant-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

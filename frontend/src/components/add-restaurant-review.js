@@ -12,9 +12,6 @@ const AddRestaurantReview = (props) => {
   //React Router state location prop passed from react router component <Link to="" /> in restaurant-card.js
   let {state} = useLocation()
 
-  console.log("LOCATION", state)
-  console.log("params (restaurant id)", id)
-
   //Check if state exists in prop passed from react router component <Link to="" /> in restaurant-card.js
   if (state && state.currentReview) {
     //If the review state exists enable editing
@@ -67,9 +64,6 @@ const AddRestaurantReview = (props) => {
     }
   }
 
-  console.log("LOCATION", state)
-  console.log("params (restaurant id)", id)
-
   return (
     <div>
       {props.user ? (
@@ -83,8 +77,8 @@ const AddRestaurantReview = (props) => {
           </div>
         ) : (
           <div>
-            <div className="form-group">
-              <label htmlFor="description">{ editing ? "Edit" : "Create" } Review</label>
+            <div className="form-group add-review">
+              <label htmlFor="description"><h2>{ editing ? "Edit" : "Create" } Review</h2></label>
               <input
                 type="text"
                 className="form-control"
@@ -103,7 +97,7 @@ const AddRestaurantReview = (props) => {
       </div>
       ) : (
       <div>
-        Please log in.
+        <h2>Please log in</h2>
       </div>
       )}
     </div>

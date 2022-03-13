@@ -1,5 +1,4 @@
 # dependencies
-backend/node_modules
 frontend/node_modules
 
 # production
@@ -7,3 +6,4 @@ frontend/build
 
 #env
 backend/*.env
+node_modules
