@@ -27,6 +27,6 @@ if(process.env.NODE_ENV === 'production') {
 }
 
 //Route that doesn't exist
-app.use("*", (req,res) => {res.status(404).json({error: "Page not found"})})
+// app.use("*", (req,res) => {res.status(404).json({error: "Page not found"})})
 
 module.exports = app

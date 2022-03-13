@@ -37,7 +37,7 @@ mongoClient.connect(
   await RestaurantsDAO.injectDB(client)
   await ReviewsDAO.injectDB(client)
   //Start node server
-  app.listen(port, ()=> {
+  app.listen(process.env.PORT || 5000, ()=> {
     console.log(`Listening on port ${port}`)
   })
 })
