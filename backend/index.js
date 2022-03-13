@@ -1,12 +1,10 @@
 //Server app
 const app = require('./server.js')
 //Express imports
-const fs = require('fs')
-const path = require('path')
 const dotenv = require('dotenv').config()
 const nodemon = require('nodemon')
 const mongodb = require('mongodb')
-const port = process.env.PORT || 3000
+
 //DAO
 const RestaurantsDAO = require('./dataAccessObject/restaurantsDAO')
 const ReviewsDAO = require('./dataAccessObject/reviewsDAO')
