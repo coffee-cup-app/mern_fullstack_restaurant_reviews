@@ -11,9 +11,6 @@ app.use(cors())
 //Routes
 app.use("/api/restaurants", restaurants)
 
-//Route that doesn't exist
-app.use("*", (req,res) => {res.status(404).json({error: "Page not found"})})
-
 //Production check, server frontend static assets
 if(process.env.NODE_ENV === 'production') {
   //Build folder with front end static assets
@@ -28,5 +25,8 @@ if(process.env.NODE_ENV === 'production') {
 } else {
   app.get('/', (req,res) => res.send('set process.env.NODE_ENV = production'))
 }
+
+//Route that doesn't exist
+app.use("*", (req,res) => {res.status(404).json({error: "Page not found"})})
 
 module.exports = app
