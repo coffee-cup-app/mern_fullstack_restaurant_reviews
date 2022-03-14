@@ -1,11 +1,13 @@
 const express = require('express')
 const restaurants = require('./api/restaurants.route.js')
 const path = require('path')
+const cors = require('cors')
 
 const app = express()
 
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
+app.use(cors())
 
 //Routes
 app.use("/api/restaurants", restaurants)

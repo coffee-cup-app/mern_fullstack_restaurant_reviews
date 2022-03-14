@@ -34,8 +34,9 @@ mongoClient.connect(
   //Apply custom class RestaurantsDAO to filter DB queries
   await RestaurantsDAO.injectDB(client)
   await ReviewsDAO.injectDB(client)
+  
   //Start node server
   app.listen(process.env.PORT || 5000, ()=> {
-    console.log(`Listening on port ${port}`)
+    console.log(`Listening`)
   })
 })
