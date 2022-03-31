@@ -19,7 +19,7 @@ mongoClient.connect(
     //Max number of connections
     maxPoolSize: 50,
     //2500 ms request timeout
-    wtimeoutMS: 2500,
+    // wtimeoutMS: 2500,
     //Parse mongodb connection strings
     useNewUrlParser: true
 })
