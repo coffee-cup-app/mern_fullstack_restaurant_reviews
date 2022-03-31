@@ -21,7 +21,7 @@ mongoClient.connect(
     //2500 ms request timeout
     // wtimeoutMS: 2500,
     //Parse mongodb connection strings
-    useNewUrlParser: true
+    // useNewUrlParser: true
 })
 //Catch connection errors to DB
 .catch((err) => {
