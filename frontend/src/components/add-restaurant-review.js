@@ -47,7 +47,7 @@ const AddRestaurantReview = (props) => {
       RestaurantDataService.updateReview(data)
         .then(response => {
           setSubmitted(true);
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch(err => {
           console.error(`An error occurred updating the review: ${err}`);
@@ -56,7 +56,7 @@ const AddRestaurantReview = (props) => {
       RestaurantDataService.createReview(data)
         .then(response => {
           setSubmitted(true);
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch(err => {
           console.log(`An error occurred creating the review: ${err}`);

@@ -4,6 +4,11 @@
   margin: 0;
 }
 
+p {
+  max-width: 95%;
+  text-align: left;
+}
+
 .App {
   text-align: center;
 }

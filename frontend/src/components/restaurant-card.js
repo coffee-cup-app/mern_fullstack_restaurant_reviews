@@ -22,7 +22,7 @@ const RestaurantCard = (props) => {
   const getRestaurantCard = (id) => {
     RestaurantDataService.get(id)
       .then(response => {
-        console.log("Repsonse Data:", response.data)
+        // console.log("Repsonse Data:", response.data)
         //Destructure key/values from response.data and update the initRestaurantState
         const {_id, name, address, cuisine, reviews} = response.data
         setRestaurantCard({
@@ -80,12 +80,13 @@ const RestaurantCard = (props) => {
             Add Review
           </Link>
           
-          <div className="row">
+          <div>
             {restaurantCard.reviews.length > 0 ? (
               restaurantCard.reviews.map((review, index) => {
                 return (
-                  <div className="col-lg pb-1" key={index}>
-                    <div className="card bodyreview-card">
+                
+                  <div className="col pb-1" key={index}>
+                    <div className="card">
                       <div className="card-body">
                         <div className="card-text review-card-text">
                           <div>
@@ -100,14 +101,14 @@ const RestaurantCard = (props) => {
                         </div>
                         {props.user && props.user.id === review.user_id &&
                           <div className="row review-buttons">
-                            <a onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-lg-5 mx-1 mb-1">
+                            <button onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-1 mx-1 mb-1">
                               Delete
-                            </a>
+                            </button>
                             <Link
                               href=""
                               to={"/restaurants/" + id + "/review"}
                               state={{currentReview: review}}
-                              className="btn btn-primary col-lg-5 mx-1 mb-1">
+                              className="btn btn-primary col-1 mx-1 mb-1">
                               Edit
                             </Link>
                           </div>                   
@@ -115,6 +116,7 @@ const RestaurantCard = (props) => {
                       </div>
                     </div>
                   </div>
+                
                 )
               })
             ) : (
@@ -122,8 +124,8 @@ const RestaurantCard = (props) => {
               <strong>No reviews yet</strong>
             </div>
             )}
-
           </div>
+          
 
         </div>
       ) : (
