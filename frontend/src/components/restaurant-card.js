@@ -80,13 +80,12 @@ const RestaurantCard = (props) => {
             Add Review
           </Link>
           
-          <div>
+          <div className="review-container">
             {restaurantCard.reviews.length > 0 ? (
               restaurantCard.reviews.map((review, index) => {
                 return (
-                
-                  <div className="col pb-1" key={index}>
-                    <div className="card">
+                  <div className="review-flex-items pb-1" key={index}>
+                    <div className="rev-flex-card card">
                       <div className="card-body">
                         <div className="card-text review-card-text">
                           <div>
@@ -100,15 +99,15 @@ const RestaurantCard = (props) => {
                           </div>
                         </div>
                         {props.user && props.user.id === review.user_id &&
-                          <div className="row review-buttons">
-                            <button onClick={() => deleteReview(review._id, index)} className="btn btn-primary col-1 mx-1 mb-1">
+                          <div className="review-buttons">
+                            <button onClick={() => deleteReview(review._id, index)} className="btn btn-primary col mx-5 my-1">
                               Delete
                             </button>
                             <Link
                               href=""
                               to={"/restaurants/" + id + "/review"}
                               state={{currentReview: review}}
-                              className="btn btn-primary col-1 mx-1 mb-1">
+                              className="btn btn-primary col mx-5 my-1">
                               Edit
                             </Link>
                           </div>                   
@@ -120,7 +119,7 @@ const RestaurantCard = (props) => {
                 )
               })
             ) : (
-            <div className="no-reviews col-sm-4">
+            <div className="no-reviews">
               <strong>No reviews yet</strong>
             </div>
             )}

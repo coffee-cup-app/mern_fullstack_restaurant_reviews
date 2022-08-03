@@ -101,6 +101,21 @@ p {
   margin: 0.5rem 0;
 }
 
+.review-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.review-flex-items {
+  flex: 1;
+}
+
+.rev-flex-card {
+  width: 100%;
+}
+
 .review-properties {
   align-items: center;
 }
@@ -160,6 +175,7 @@ p {
 }
 
 .restaurant-list-btns {
+  display: flex;
   width: 100%;
   justify-content: center;
 }
