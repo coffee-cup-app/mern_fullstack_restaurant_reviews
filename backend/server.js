@@ -15,12 +15,12 @@ app.use("/api/restaurants", restaurants)
 //Production check, server frontend static assets
 if(process.env.NODE_ENV === 'production') {
   //Build folder with front end static assets
-  app.use(express.static(path.join(__dirname, "../frontend/build")))
+  app.use(express.static(path.join(__dirname, "/build")))
   //Serve html file in frontend
   app.get('*', (req,res) => {
     res.sendFile((
       //__dirname -> '../' -> frontend -> build -> html
-      path.resolve(__dirname, '../', 'frontend', 'build', 'index.html')
+      path.resolve('index.html', { root: __dirname })
     ))
   })
 } else {
