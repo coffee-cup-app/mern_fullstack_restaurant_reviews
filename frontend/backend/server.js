@@ -14,13 +14,18 @@ app.use("/api/restaurants", restaurants)
 
 //Production check, server frontend static assets
 if(process.env.NODE_ENV === 'production') {
+  //React build file, must be done first before serving build index.html from public
   //Build folder with front end static assets
-  app.use(express.static(path.join(__dirname, "/build")))
+  app.use(express.static(path.join(__dirname, "..", "build")));
+  //Serve react build file from public along with css and js
+  app.use(express.static("public"));
+
+
   //Serve html file in frontend
   app.get('*', (req,res) => {
     res.sendFile((
       //__dirname -> '../' -> frontend -> build -> html
-      path.resolve('index.html', { root: __dirname })
+      res.sendFile(path.join(__dirname, "..", "build", "index.html"))
     ))
   })
 } else {
