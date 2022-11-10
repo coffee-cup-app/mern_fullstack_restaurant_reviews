@@ -2,7 +2,7 @@ const express = require('express')
 const restaurants = require('./api/restaurants.route.js')
 const path = require('path')
 const cors = require('cors')
-
+const dotenv = require('dotenv').config()
 const app = express()
 
 app.use(express.urlencoded({extended: false}))
@@ -11,6 +11,9 @@ app.use(cors())
 
 //Routes
 app.use("/api/restaurants", restaurants)
+
+console.log('node-env', process.env.NODE_ENV)
+console.log('port', process.env.PORT)
 
 //Production check, server frontend static assets
 if(process.env.NODE_ENV === 'production') {

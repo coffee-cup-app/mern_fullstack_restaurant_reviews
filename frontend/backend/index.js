@@ -26,7 +26,7 @@ mongoClient.connect(
 //Catch connection errors to DB
 .catch((err) => {
   console.error(err.stack)
-  process.exit(1)
+  // process.exit(1)
 })
 //Client connected to DB successfully
 .then(async client => {
