@@ -17,7 +17,7 @@
   },
   "scripts": {
     "start-frontend": "react-scripts start",
-    "start-server": "npm run build && (cd backend && npm start)",
+    "start-backend": "npm run build && (cd backend && npm start)",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
